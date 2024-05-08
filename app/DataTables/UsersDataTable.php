@@ -45,6 +45,7 @@ class UsersDataTable extends DataTable
                         Button::raw()->text('Cancel')->actionClose(),
                         Button::raw()->text('Create')->action("alert('Dummy form submitted')"),
                     ]),
+                Button::make('create')->editor('large')->text('Large Form'),
                 Button::make('create')->editor('create'),
                 Button::make('edit')->editor('editor'),
                 Button::make('remove')->editor('editor'),
@@ -91,6 +92,12 @@ class UsersDataTable extends DataTable
                         Fields\Password::make('password_confirmation')->label('Confirm Password'),
                     ]),
                 Editor::make()
+                    ->fields([
+                        Fields\Text::make('name'),
+                        Fields\Text::make('email')->multiEditable(false),
+                    ]),
+                Editor::make('large')
+                    ->formOptions(['width' => 'max-w-7xl'])
                     ->fields([
                         Fields\Text::make('name'),
                         Fields\Text::make('email')->multiEditable(false),
