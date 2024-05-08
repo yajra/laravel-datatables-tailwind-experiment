@@ -93,7 +93,7 @@ class UsersDataTable extends DataTable
                 Editor::make()
                     ->fields([
                         Fields\Text::make('name'),
-                        Fields\Text::make('email'),
+                        Fields\Text::make('email')->multiEditable(false),
                     ]),
             ]);
     }
