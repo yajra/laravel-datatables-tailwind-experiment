@@ -19,9 +19,11 @@
     },
     "dependencies": {
         "datatables.net-buttons-dt": "^3.0.2",
+        "datatables.net-datetime": "^1.5.2",
         "datatables.net-dt": "^2.0.7",
         "datatables.net-editor-dt": "^2.2.0",
         "datatables.net-select-dt": "^2.0.2",
-        "jquery": "^3.7.1"
+        "jquery": "^3.7.1",
+        "moment": "^2.30.1"
     }
 }

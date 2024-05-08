@@ -3,12 +3,15 @@
  */
 
 import $ from 'jquery';
+import moment from 'moment';
 import DataTable from 'datatables.net-dt';
 import 'datatables.net-buttons-dt';
 import 'datatables.net-select-dt';
 import 'datatables.net-editor-dt';
+import 'datatables.net-datetime';
 
 window.jQuery = window.$ = $
+window.moment = moment;
 window.DataTable = DataTable;
 
 /*
@@ -147,7 +150,7 @@ $.extend(true, DataTable.Buttons.defaults, {
             className: 'dt-button-collection',
             button: {
                 tag: 'a',
-                className: 'btn-sm dt-button dropdown-item',
+                className: 'dt-button dropdown-item',
                 active: 'active',
                 disabled: 'disabled'
             }
@@ -252,9 +255,6 @@ $.extend(true, DataTable.ext.buttons, {
 
 /** Editor TailwindCSS modal */
 DataTable.Editor.display.tailwindcss = $.extend(true, {}, DataTable.Editor.models.displayController, {
-    /*
-     * API methods
-     */
     "init": function (dte) {
         let width = dte.s.formOptions.width || 'sm:max-w-2xl';
         let conf = {

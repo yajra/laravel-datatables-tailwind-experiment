@@ -14,11 +14,6 @@ use Yajra\DataTables\Services\DataTable;
 
 class UsersDataTable extends DataTable
 {
-    /**
-     * Build the DataTable class.
-     *
-     * @param  QueryBuilder  $query  Results from query() method.
-     */
     public function dataTable(QueryBuilder $query): EloquentDataTable
     {
         return (new EloquentDataTable($query))
@@ -26,17 +21,11 @@ class UsersDataTable extends DataTable
             ->setRowId('id');
     }
 
-    /**
-     * Get the query source of dataTable.
-     */
     public function query(User $model): QueryBuilder
     {
         return $model->newQuery();
     }
 
-    /**
-     * Optional method if you want to use the html builder.
-     */
     public function html(): HtmlBuilder
     {
         return $this->builder()
@@ -48,6 +37,14 @@ class UsersDataTable extends DataTable
             ->buttons([
                 Button::make('selectAll'),
                 Button::make('selectNone'),
+                Button::make('create')
+                    ->editor('dummy')
+                    ->text('Dummy Form')
+                    ->formTitle('Dummy Form with all field types')
+                    ->formButtons([
+                        Button::raw()->text('Cancel')->actionClose(),
+                        Button::raw()->text('Create')->action("alert('Dummy form submitted')"),
+                    ]),
                 Button::make('create')->editor('create'),
                 Button::make('edit')->editor('editor'),
                 Button::make('remove')->editor('editor'),
@@ -58,6 +55,32 @@ class UsersDataTable extends DataTable
                     ]),
             ])
             ->editors([
+                Editor::make('dummy')
+                    ->fields([
+                        Fields\Image::make('image'),
+                        Fields\Text::make('text'),
+                        Fields\Password::make('password'),
+                        Fields\TextArea::make('textarea'),
+                        Fields\Select::make('select')->options([
+                            'Option 1',
+                            'Option 2',
+                            'Option 3',
+                        ]),
+                        Fields\Checkbox::make('checkbox')->options([
+                            'Option 1',
+                            'Option 2',
+                            'Option 3',
+                        ]),
+                        Fields\Radio::make('radio')->options([
+                            'Option 1',
+                            'Option 2',
+                            'Option 3',
+                        ]),
+                        Fields\Date::make('date'),
+                        Fields\Time::make('time'),
+                        Fields\DateTime::make('datetime')->label('Date Time'),
+                        Fields\File::make('file'),
+                    ]),
                 Editor::make('create')
                     ->fields([
                         Fields\Text::make('name'),
@@ -73,9 +96,6 @@ class UsersDataTable extends DataTable
             ]);
     }
 
-    /**
-     * Get the dataTable columns definition.
-     */
     public function getColumns(): array
     {
         return [
@@ -88,9 +108,6 @@ class UsersDataTable extends DataTable
         ];
     }
 
-    /**
-     * Get the filename for export.
-     */
     protected function filename(): string
     {
         return 'Users_'.date('YmdHis');
