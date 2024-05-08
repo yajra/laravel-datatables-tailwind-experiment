@@ -58,7 +58,7 @@ $.extend(true, DataTable.ext.classes, {
     },
     table: 'dataTable min-w-full text-sm align-middle whitespace-nowrap',
     thead: {
-        row: 'border-b border-gray-100 dark:border-gray-700/50',
+        row: 'border-b border-gray-100 dark:border-gray-700/50 uppercase',
         cell: 'px-3 py-4 text-gray-900 bg-gray-100/75 font-semibold text-left dark:text-gray-50 dark:bg-gray-700/25'
     },
     tbody: {
