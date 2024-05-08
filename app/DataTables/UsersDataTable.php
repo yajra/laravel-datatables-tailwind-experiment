@@ -42,11 +42,19 @@ class UsersDataTable extends DataTable
             ->columns($this->getColumns())
             ->minifiedAjax()
             ->orderBy(1)
-            ->selectStyleSingle()
+            ->selectStyleOS()
             ->buttons([
-                Button::make('excel')->text('Excel'),
-                Button::make('csv')->text('CSV'),
-                Button::raw()->text('TESTER')->action('console.log("TESTER")'),
+                Button::make('selectAll'),
+                Button::make('selectNone'),
+                Button::raw()->text('Create')->action('alert("Create")'),
+                Button::raw()->text('Edit')->action('alert("Edit")'),
+                Button::raw()
+                    ->text('Delete')
+                    ->action('alert("Delete")'),
+                Button::make('collection')->buttons([
+                    Button::make('excel')->text('Excel'),
+                    Button::make('csv')->text('CSV'),
+                ]),
             ]);
     }
 
