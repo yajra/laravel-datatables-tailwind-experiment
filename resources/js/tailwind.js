@@ -191,7 +191,7 @@ $.extend(true, DataTable.Editor.classes, {
         info: "DTE_Form_Info mx-6 mb-4",
         error: "DTE_Form_Error text-red-600 text-xs block",
         buttons: "DTE_Form_Buttons flex flex-row-reverse w-full",
-        button: "h-10 inline-flex justify-center rounded-md border border-gray-300 px-4 py-2 text-base leading-6 font-medium shadow-sm transition ease-in-out duration-150 sm:text-sm sm:leading-5",
+        button: "inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:opacity-50 transition ease-in-out duration-150 ml-2",
         buttonInternal: "hidden h-8 mb-2 mt-2 text-xs inline-flex items-center justify-center rounded-md border border-gray-300 px-3 py-1 leading-6 font-medium shadow-sm transition ease-in-out duration-150 sm:text-sm sm:leading-5"
     },
     field: {
