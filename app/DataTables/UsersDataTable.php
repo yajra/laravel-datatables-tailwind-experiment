@@ -8,6 +8,8 @@ use Yajra\DataTables\EloquentDataTable;
 use Yajra\DataTables\Html\Builder as HtmlBuilder;
 use Yajra\DataTables\Html\Button;
 use Yajra\DataTables\Html\Column;
+use Yajra\DataTables\Html\Editor\Editor;
+use Yajra\DataTables\Html\Editor\Fields;
 use Yajra\DataTables\Services\DataTable;
 
 class UsersDataTable extends DataTable
@@ -40,21 +42,33 @@ class UsersDataTable extends DataTable
         return $this->builder()
             ->setTableId('users-table')
             ->columns($this->getColumns())
-            ->minifiedAjax()
+            ->minifiedAjax(route('users.index'))
             ->orderBy(1)
             ->selectStyleOS()
             ->buttons([
                 Button::make('selectAll'),
                 Button::make('selectNone'),
-                Button::raw()->text('Create')->action('alert("Create")'),
-                Button::raw()->text('Edit')->action('alert("Edit")'),
-                Button::raw()
-                    ->text('Delete')
-                    ->action('alert("Delete")'),
+                Button::make('create')->editor('create'),
+                Button::make('edit')->editor('editor'),
+                Button::make('remove')->editor('editor'),
                 Button::make('collection')->buttons([
                     Button::make('excel')->text('Excel'),
                     Button::make('csv')->text('CSV'),
                 ]),
+            ])
+            ->editors([
+                Editor::make('create')
+                    ->fields([
+                        Fields\Text::make('name'),
+                        Fields\Text::make('email'),
+                        Fields\Password::make('password'),
+                        Fields\Password::make('password_confirmation')->label('Confirm Password'),
+                    ]),
+                Editor::make()
+                    ->fields([
+                        Fields\Text::make('name'),
+                        Fields\Text::make('email'),
+                    ]),
             ]);
     }
 
