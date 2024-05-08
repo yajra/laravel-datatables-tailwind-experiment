@@ -23,4 +23,4 @@ You need to have `DataTables Editor (JS) 2.3.2` installed. Just download the zip
 
 ## License
 
-This project is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This project is open-sourced software licensed under the [DBAD license](https://dbad-license.org/).
