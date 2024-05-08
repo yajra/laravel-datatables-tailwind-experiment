@@ -68,4 +68,12 @@ class UsersDataTableEditor extends DataTablesEditor
 
         return $model;
     }
+
+    public function uploadRules(): array
+    {
+        return [
+            'image' => 'sometimes|file|mimes:jpeg,png,jpg,gif,svg|max:50',
+            'file' => 'sometimes|file|mimes:jpeg,png,jpg,gif,svg|max:50',
+        ];
+    }
 }
