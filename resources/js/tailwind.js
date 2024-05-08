@@ -170,7 +170,7 @@ $.extend(true, DataTable.Editor.classes, {
         active: "processing"
     },
     header: {
-        wrapper: "DTE_Header flex font-medium justify-between modal-header my-6 mx-6",
+        wrapper: "DTE_Header flex font-medium uppercase justify-between modal-header my-6 mx-6",
         content: "DTE_Header_Content",
     },
     body: {
@@ -272,7 +272,7 @@ DataTable.Editor.display.tailwindcss = $.extend(true, {}, DataTable.Editor.model
                       </div>
                     </div>
                 `),
-            close: $('<button class="btn-close px-2 font-mono text-2xl hover:font-bold absolute right-2 top-2 dark:text-dark_neut-100">&times;</div>')
+            close: $('<button class="btn-close px-2 font-mono text-2xl hover:font-bold absolute right-4 top-5 dark:text-dark_neut-100">&times;</div>')
                 .attr('title', dte.i18n.close)
                 .on('click', function () {
                     dte.close('icon');
