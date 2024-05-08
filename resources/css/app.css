@@ -2,7 +2,6 @@
 @import "./dataTables/ordering.scss";
 @import "datatables.net-buttons-dt/css/buttons.dataTables.min.css";
 @import "datatables.net-select-dt/css/select.dataTables.min.css";
-@import "datatables.net-editor-dt/css/editor.dataTables.min.css";
 
 @tailwind base;
 @tailwind components;

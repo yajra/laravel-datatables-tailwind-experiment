@@ -51,10 +51,11 @@ class UsersDataTable extends DataTable
                 Button::make('create')->editor('create'),
                 Button::make('edit')->editor('editor'),
                 Button::make('remove')->editor('editor'),
-                Button::make('collection')->buttons([
-                    Button::make('excel')->text('Excel'),
-                    Button::make('csv')->text('CSV'),
-                ]),
+                Button::make('collection')
+                    ->buttons([
+                        Button::raw()->text('Excel')->action('alert("Excel button")'),
+                        Button::raw()->text('CSV')->action('alert("CSV button")'),
+                    ]),
             ])
             ->editors([
                 Editor::make('create')
