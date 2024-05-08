@@ -55,6 +55,7 @@ class UsersDataTable extends DataTable
                         Button::raw()->text('CSV')->action('alert("CSV button")'),
                     ]),
             ])
+            ->addScript('datatables::functions.batch_remove')
             ->editors([
                 Editor::make('dummy')
                     ->fields([
