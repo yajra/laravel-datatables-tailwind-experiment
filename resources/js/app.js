@@ -1,2 +1,2 @@
 import './bootstrap';
-import './tailwind.js';
+import './dataTables.tailwindcss.js';
