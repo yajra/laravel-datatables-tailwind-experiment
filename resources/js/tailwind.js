@@ -272,7 +272,7 @@ DataTable.Editor.display.tailwindcss = $.extend(true, {}, DataTable.Editor.model
                       </div>
                     </div>
                 `),
-            close: $('<button class="btn-close px-2 hover:font-bold absolute right-2 top-2 dark:text-dark_neut-100">&times;</div>')
+            close: $('<button class="btn-close px-2 font-mono text-2xl hover:font-bold absolute right-2 top-2 dark:text-dark_neut-100">&times;</div>')
                 .attr('title', dte.i18n.close)
                 .on('click', function () {
                     dte.close('icon');
@@ -284,7 +284,7 @@ DataTable.Editor.display.tailwindcss = $.extend(true, {}, DataTable.Editor.model
         // Add `form-input` to required elements
         dte.on('displayOrder.dte', function (e, display, action, form) {
             $.each(dte.s.fields, function (key, field) {
-                $('input:not([type=checkbox]):not([type=radio]), textarea', field.node()).addClass('upload-iman-style my-2 py-2 pl-2 block w-full border-gray-300 rounded-md focus:border-blue-50 focus:ring focus:ring-blue-200 focus:ring-opacity-50 sm:text-sm sm:leading-5 dark:bg-dark_neut-500 dark:text-dark_neut-100 dark:border-dark_neut-500');
+                $('input:not([type=checkbox]):not([type=radio]), textarea', field.node()).addClass('my-2 py-2 pl-2 block w-full border-gray-300 rounded-md focus:border-blue-50 focus:ring focus:ring-blue-200 focus:ring-opacity-50 sm:text-sm sm:leading-5 dark:bg-dark_neut-500 dark:text-dark_neut-100 dark:border-dark_neut-500');
                 $('select', field.node()).addClass(' block w-full border-gray-100 rounded-md focus:border-blue-100 focus:ring focus:ring-blue-100 focus:ring-opacity-50 sm:text-sm sm:leading-5 dark:bg-dark_neut-800 dark:text-dark_neut-100 dark:border-dark_neut-500');
             });
         });
