@@ -50,7 +50,7 @@ class UsersDataTableEditor extends DataTablesEditor
     protected function messages(): array
     {
         return [
-            'DT_RowId.not_in' => 'You cannot delete your own record.',
+            'DT_RowId.not_in' => 'You cannot delete record :values',
         ];
     }
 
