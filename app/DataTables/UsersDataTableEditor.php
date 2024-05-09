@@ -42,7 +42,16 @@ class UsersDataTableEditor extends DataTablesEditor
      */
     public function removeRules(Model $model): array
     {
-        return [];
+        return [
+            'DT_RowId' => 'required|not_in:'.$model->getKey(),
+        ];
+    }
+
+    protected function messages(): array
+    {
+        return [
+            'DT_RowId.not_in' => 'You cannot delete your own record.',
+        ];
     }
 
     /**
