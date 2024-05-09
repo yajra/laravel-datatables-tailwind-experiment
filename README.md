@@ -9,6 +9,9 @@ You need to have `DataTables Editor (JS) 2.3.2` installed. Just download the zip
 ## Installation
 
 1. Clone the repository and set up the `.env` file
+  - Run `cp .env.example .env`
+  - Set up the database connection in the `.env` file 
+  - Set up the `APP_KEY` by running `php artisan key:generate`
 2. Run `composer install`
 3. Run `npm install`
 4. Run `npm run dev`
