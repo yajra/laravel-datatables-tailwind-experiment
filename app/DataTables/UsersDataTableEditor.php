@@ -43,7 +43,7 @@ class UsersDataTableEditor extends DataTablesEditor
     public function removeRules(Model $model): array
     {
         return [
-            'DT_RowId' => 'required|not_in:'.$model->getKey(),
+            'DT_RowId' => 'required|not_in:'.auth()->id(),
         ];
     }
 
