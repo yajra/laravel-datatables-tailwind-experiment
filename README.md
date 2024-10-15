@@ -4,7 +4,7 @@ This is a simple project to experiment with Laravel DataTables and TailwindCSS.
 
 ## Requirements
 
-You need to have `DataTables Editor (JS) 2.3.2` installed. Just download the zip file from the [DataTables Editor website](https://editor.datatables.net/download/) and save it in the `project` folder.
+You need to have `DataTables Editor (JS) 2.3.2` installed. Download the zip file from the [DataTables Editor website](https://editor.datatables.net/download/) and save it in the `project` folder.
 
 ## Installation
 
